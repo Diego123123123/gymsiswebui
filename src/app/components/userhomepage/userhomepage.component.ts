@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from "../../Services/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-userhomepage',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserhomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    console.log(this.userService.getToken())
+    if (this.userService.getToken() === null || this.userService.getToken() === '') {
+      this.router.navigate(['']);
+    }
   }
 
 }
