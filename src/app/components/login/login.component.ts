@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../Services/user.service';
 import {Router} from '@angular/router';
 import {LoginUser, NewUser} from '../../Models/newUser';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-login',
@@ -21,13 +20,13 @@ export class LoginComponent implements OnInit {
     console.log('-------------------------');
     console.log(this.myuser);
 
-    this.userService.signin(this.myuser).subscribe((resp) => {
+    this.userService.signin({
+      'email': this.myuser.email,
+      'password': this.myuser.password
+    }).subscribe((resp) => {
       console.log(resp)
       sessionStorage.setItem('token', resp['token']);
       this.router.navigate(["userhome"]);
     });
-
-
   }
-
 }

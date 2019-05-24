@@ -18,8 +18,14 @@ export class SignupComponent implements OnInit {
 
   signUp() {
     console.log(this.user)
-    this.userService.signUp(this.user).subscribe((resp) => {
+    this.userService.signUp({
+      "email": this.user.email,
+      "lastName": this.user.lastName,
+      "name": this.user.name,
+      "password": this.user.password
+    }).subscribe((resp) => {
       sessionStorage.setItem('token', resp['token']);
+      this.router.navigate(["userhome"]);
     });
   }
 
