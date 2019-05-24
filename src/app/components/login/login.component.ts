@@ -28,5 +28,11 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('token', resp['token']);
       this.router.navigate(["userhome"]);
     });
+
+    
+  }
+
+  redirectSignUp() {
+    this.router.navigate(['signup']);
   }
 }

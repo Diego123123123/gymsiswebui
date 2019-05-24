@@ -16,4 +16,9 @@ export class UserhomepageComponent implements OnInit {
       this.router.navigate(['']);
     }
   }
+
+  logOut(){
+    sessionStorage.removeItem["token"];
+    this.router.navigate(['']);
+  }
 }

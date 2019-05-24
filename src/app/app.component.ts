@@ -11,7 +11,5 @@ export class AppComponent {
 
   constructor(private router: Router) { }
 
-  redirectSignUp() {
-    this.router.navigate(['signup']);
-  }
+  
 }
