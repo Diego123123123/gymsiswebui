@@ -10,12 +10,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { NewReserveComponent } from './components/new-reserve/new-reserve.component';
+import { ReservesComponent } from './components/reserves/reserves.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     UserhomepageComponent,
+    NewReserveComponent,
+    ReservesComponent,
   ],
   imports: [
     BrowserModule,

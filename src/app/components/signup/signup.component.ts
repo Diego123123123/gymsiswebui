@@ -29,4 +29,9 @@ export class SignupComponent implements OnInit {
     });
   }
 
+  redirectLogIn() {
+    this.router.navigate([""]);
+  }
+
+
 }

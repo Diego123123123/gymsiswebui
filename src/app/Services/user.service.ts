@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { KestrellService } from './kestrell.service';
 import { HttpClient } from '@angular/common/http';
+import * as jwt_decode from "jwt-decode";
 
 @Injectable({
   providedIn: 'root'
@@ -21,15 +22,9 @@ export class UserService extends KestrellService {
 
 
   getToken() {
-    let user: any;
-    user = JSON.parse(sessionStorage.getItem('token'));
-    let token: any;
-    token = '';
-    if (user) {
-      token = user.token;
-    }
-    return token;
+    return sessionStorage.getItem('token');
   }
-
-
+  getCurrentUserId() {
+    return jwt_decode(sessionStorage.getItem('token'))["userid"];
+  }
 }
