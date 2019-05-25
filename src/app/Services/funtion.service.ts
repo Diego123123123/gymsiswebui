@@ -19,4 +19,12 @@ export class FuntionService extends KestrellService{
   getFunctionById(){
     return this.http.get((this.url) + '/' + localStorage.getItem('functionId'));
   }
+
+  deleteFunction(){
+      return this.http.delete((this.url)+ '/'+localStorage.getItem('functionId'));
+  }
+
+  postFunction(myFunction){
+    return this.http.post(this.url,myFunction);
+  }
 }
