@@ -4,15 +4,23 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import {UserhomepageComponent} from './components/userhomepage/userhomepage.component';
 import {NewReserveComponent} from './components/new-reserve/new-reserve.component';
-import {ReservesComponent} from "./components/reserves/reserves.component";
+import {ReservesComponent} from './components/reserves/reserves.component';
+import {AdminHomepageComponent} from './components/admin-homepage/admin-homepage.component';
+import {CreateFunctionComponent} from './components/create-function/create-function.component';
+import {EditFunctionComponent} from './components/edit-function/edit-function.component';
+import {SeeUsersComponent} from './components/see-users/see-users.component';
 
 const routes: Routes = [
-  {path:'',component: LoginComponent},
-  {path:'signup',component: SignupComponent},
-  {path:'userhome', component: UserhomepageComponent},
-  {path:'newReserve', component: NewReserveComponent},
-  {path:'reserves', component: ReservesComponent},
-  {path:'**',component: LoginComponent},
+  {path: '', component: LoginComponent},
+  {path: 'signup', component: SignupComponent},
+  {path: 'userhome', component: UserhomepageComponent},
+  {path: 'newReserve', component: NewReserveComponent},
+  {path: 'reserves', component: ReservesComponent},
+  {path: 'adminhome', component: AdminHomepageComponent},
+  {path: 'newfunction', component: CreateFunctionComponent},
+  {path: 'editfunction', component: EditFunctionComponent},
+  {path: 'users', component: SeeUsersComponent},
+  {path: '**', component: LoginComponent},
 ];
 
 @NgModule({

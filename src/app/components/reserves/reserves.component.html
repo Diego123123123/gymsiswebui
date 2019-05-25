@@ -16,32 +16,25 @@
     </form>
   </div>
 </nav>
-<!--<div class="container">-->
-  <!--<div class="card">-->
-    <!--<div class="card-header">-->
-      <!--<h3>Reservas</h3>-->
-    <!--</div>-->
-    <!--<div class="card-body">-->
-      <!--<table class="table table-hover" >-->
-        <!--<thead>-->
-        <!--<tr>-->
-          <!--<th>ID</th>-->
-          <!--<th>Nombre</th>-->
-          <!--<th>Apellido</th>-->
-          <!--<th>   </th>-->
-        <!--</tr>-->
-        <!--</thead>-->
-        <!--<tbody>-->
-        <!--<tr *ngFor="let persona of personas">-->
-          <!--<td>{{persona.id}}</td>-->
-          <!--<td>{{persona.nombre}}</td>-->
-          <!--<td>{{persona.apellido}}</td>-->
-          <!--<td>-->
-            <!--<button (click)="Eliminar(persona)" class="btn btn-danger" style="margin-left: 20px">Eliminar</button>-->
-          <!--</td>-->
-        <!--</tr>-->
-        <!--</tbody>-->
-      <!--</table>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">FUNCTION</th>
+    <th scope="col">SCHEDULE</th>
+    <th scope="col">ROOM</th>
+    <th scope="col">AMOUNT OF PEOPLE</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let reserve of userReserves">
+    <td> {{reserve.function.movieName}}</td>
+    <td>{{reserve.function.schedule}}</td>
+    <td>{{reserve.function.room}}</td>
+    <td>{{reserve.amountOfPeople}}</td>
+    <td><button type="button" class="btn btn-danger">CANCEL</button></td>
+    <td><button type="button" class="btn btn-warning">EDIT</button></td>
+  </tr>
+  </tbody>
+</table>
+

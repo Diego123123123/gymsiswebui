@@ -26,7 +26,11 @@ export class LoginComponent implements OnInit {
     }).subscribe((resp) => {
       console.log(resp)
       sessionStorage.setItem('token', resp['token']);
-      this.router.navigate(["userhome"]);
+      if (this.userService.getCurrentUserId() === 'ea9a9ecc-dd20-48f8-887b-23b9c44df472') {
+        this.router.navigate(["adminhome"]);
+      }else{
+        this.router.navigate(["userhome"]);
+      }
     });
 
     

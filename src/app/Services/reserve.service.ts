@@ -16,5 +16,11 @@ export class ReserveService extends KestrellService {
     return this.http.post(this.url, reserve);
   }
 
+  getReservesByUserId(userid) {
+    console.log('------------------------');
+    console.log(this.url + '/users/' + sessionStorage.getItem('token'))
+    return this.http.get(this.url + '/users/' + userid);
+  }
+
 }
 

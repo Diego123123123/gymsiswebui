@@ -12,6 +12,10 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NewReserveComponent } from './components/new-reserve/new-reserve.component';
 import { ReservesComponent } from './components/reserves/reserves.component';
+import { AdminHomepageComponent } from './components/admin-homepage/admin-homepage.component';
+import { CreateFunctionComponent } from './components/create-function/create-function.component';
+import { SeeUsersComponent } from './components/see-users/see-users.component';
+import { EditFunctionComponent } from './components/edit-function/edit-function.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +24,10 @@ import { ReservesComponent } from './components/reserves/reserves.component';
     UserhomepageComponent,
     NewReserveComponent,
     ReservesComponent,
+    AdminHomepageComponent,
+    CreateFunctionComponent,
+    SeeUsersComponent,
+    EditFunctionComponent,
   ],
   imports: [
     BrowserModule,
