@@ -37,4 +37,8 @@ export class NewReserveComponent implements OnInit {
     this.router.navigate(['userhome']);
   }
 
+  logOut() {
+    sessionStorage.removeItem["token"];
+    this.router.navigate(['']);
+  }
 }

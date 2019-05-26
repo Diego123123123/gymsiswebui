@@ -9,9 +9,6 @@
           <a class="nav-link" [href]="'users'">Usuarios <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" [href]="'allreserves'">Reservas <span class="sr-only">(current)</span></a>
-          </li>
-        <li class="nav-item active">
           <a class="nav-link" [href]="'newfunction'">Crear Funcion <span class="sr-only">(current)</span></a>
         </li>
   
@@ -26,28 +23,34 @@
   <br>
 <br>
 <br>
-<div class="container col-md-6">
-    <div class="card">
-      <div class="card-header">
-        <h3>Editar Funcion</h3>
-      </div>
-      <div class="card-body">
-        <form action="">
-          <div class="form-group">
-            <label for="">Pelicula:</label>
-            <input [(ngModel)]="myFunction.movieName" name="movieName" type="text" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="">Horario:</label>
-            <input [(ngModel)]="myFunction.schedule" name="schedule" type="text" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="">Sala:</label>
-            <input [(ngModel)]="myFunction.room" name="room" type="text" class="form-control">
-          </div>
-          <button  class="btn btn-warning">Actualizar</button>
-          
-        </form>
-      </div>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1>Reservas Activas</h1>
+    </div>
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">USUARIO</th>
+        <th scope="col">CANTIDAD PERSONAS</th>
+        <th scope="col">ID FUNCION</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reserve of reservas">
+          <td>{{reserve.reserveId}}</td>
+          <td>{{reserve.user}}</td>
+          <td>{{reserve.amountOfPeople}}</td>
+          <td>{{reserve.functionId}}</td>
+        <td><button (click)="deleteReserve(reserve.reserveId)" type="button" class="btn btn-danger">Eliminar Reserva</button></td>
+        
+      </tr>
+    </tbody>
+    </table>
     </div>
   </div>
+</div>
+  
