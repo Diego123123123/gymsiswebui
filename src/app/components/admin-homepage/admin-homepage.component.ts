@@ -27,14 +27,15 @@ export class AdminHomepageComponent implements OnInit {
     }
   }
 
-  reserve(myFunction:MyFunction):void{
-    localStorage.setItem("functionId",myFunction.functionId.toString());
-    this.router.navigate(['newReserve']);
-  }
-
   logOut() {
     sessionStorage.removeItem["token"];
     this.router.navigate(['']);
+  }
+
+  editFunction(myFunction:MyFunction)
+  {
+    localStorage.setItem("functionId",myFunction.functionId.toString());
+    this.router.navigate(['editfunction']);
   }
 
 }
