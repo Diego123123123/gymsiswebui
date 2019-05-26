@@ -3,38 +3,45 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">Cinema</a>
+    <a class="navbar-brand" [href]="'userhome'">Cinema</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" [href]="'userhome'">Home <span class="sr-only">(current)</span></a>
-      </li>
-
     </ul>
     <form class="form-inline my-2 my-lg-0">
-
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="logOut()">Log Out</button>
     </form>
   </div>
 </nav>
-
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">FUNCTION</th>
-    <th scope="col">SCHEDULE</th>
-    <th scope="col">ROOM</th>
-    <th scope="col">AMOUNT OF PEOPLE</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let reserve of userReserves">
-    <td> {{reserve.function.movieName}}</td>
-    <td>{{reserve.function.schedule}}</td>
-    <td>{{reserve.function.room}}</td>
-    <td>{{reserve.amountOfPeople}}</td>
-    <td><button type="button" class="btn btn-danger">CANCEL</button></td>
-    <td><button type="button" class="btn btn-warning">EDIT</button></td>
-  </tr>
-  </tbody>
-</table>
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1>Mis Reservas</h1>
+    </div>
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">FUNCTION</th>
+        <th scope="col">SCHEDULE</th>
+        <th scope="col">ROOM</th>
+        <th scope="col">AMOUNT OF PEOPLE</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reserve of userReserves">
+        <td> {{reserve.function.movieName}}</td>
+        <td>{{reserve.function.schedule}}</td>
+        <td>{{reserve.function.room}}</td>
+        <td>{{reserve.amountOfPeople}}</td>
+        <td><button (click)="deleteReserve(reserve.reserveId)" type="button" class="btn btn-danger">Eliminar Reserva</button></td>
+        <td><button (click)="editReserve(reserve)" type="button" class="btn btn-warning">Editar Reserva</button></td>
+      </tr>
+    </tbody>
+    </table>
+    </div>
+  </div>
+</div>
 

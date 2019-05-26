@@ -31,4 +31,9 @@ export class CreateFunctionComponent implements OnInit {
     });
   }
 
+  logOut() {
+    sessionStorage.removeItem["token"];
+    this.router.navigate(['']);
+  }
+
 }

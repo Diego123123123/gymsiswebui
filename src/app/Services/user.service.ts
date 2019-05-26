@@ -24,7 +24,12 @@ export class UserService extends KestrellService {
   getToken() {
     return sessionStorage.getItem('token');
   }
+
   getCurrentUserId() {
     return jwt_decode(sessionStorage.getItem('token'))["userid"];
+  }
+
+  getUsers(){
+    return this.http.get(this.url);
   }
 }

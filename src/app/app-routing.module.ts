@@ -9,6 +9,8 @@ import {AdminHomepageComponent} from './components/admin-homepage/admin-homepage
 import {CreateFunctionComponent} from './components/create-function/create-function.component';
 import {EditFunctionComponent} from './components/edit-function/edit-function.component';
 import {SeeUsersComponent} from './components/see-users/see-users.component';
+import { EditreserveComponent } from './components/editreserve/editreserve.component';
+import { AllreservesComponent } from './components/allreserves/allreserves.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: 'newfunction', component: CreateFunctionComponent},
   {path: 'editfunction', component: EditFunctionComponent},
   {path: 'users', component: SeeUsersComponent},
+  {path: 'editreserve', component: EditreserveComponent},
+  {path: 'allreserves', component: AllreservesComponent},
   {path: '**', component: LoginComponent},
 ];
 

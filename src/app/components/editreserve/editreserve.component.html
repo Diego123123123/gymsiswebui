@@ -15,26 +15,27 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="logOut()">Log Out</button>
       </form>
     </div>
-  </nav>
-  <div class="title" style="text-align: center; color:black" >
-      <h1>Bienvenido</h1>
-  </div>
-<div class="container">
-  <div class="row" *ngFor="let myFunction of myFunctions">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-header">
-          <h5 class="card-title">Pelicula: {{myFunction.movieName}}</h5>
-        </div>
-        <div class="card-body">
-          <p class="card-text">Horario: {{myFunction.schedule}}</p>
-          <p class="card-text">Sala: {{myFunction.room}}</p>
-          <p class="card-text">Pelicula disponible unicamente en idioma ingles, subtitulada al español</p>
-          <button class="btn btn-lg btn-outline-primary" (click)="reserve(myFunction)">Reservar entrada</button>
-        </div>
+</nav>
+
+<br>
+<br>
+<br>
+<div class="container col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Editar Reserva</h3>
+      </div>
+      <div class="card-body">
+        <form action="">
+          <div class="form-group">
+            <label for="">Cantidad:</label>
+            <input [(ngModel)]="reserveEdit.amountOfPeople" name="amount" type="text" class="form-control">
+          </div>
+          <button (click)="Actualizar(reserveEdit)" class="btn btn-warning">Actualizar</button>
+          
+        </form>
       </div>
     </div>
   </div>
-</div>
 
 
