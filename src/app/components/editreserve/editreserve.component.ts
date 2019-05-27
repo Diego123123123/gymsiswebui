@@ -3,6 +3,7 @@ import { ReserveService } from 'src/app/Services/reserve.service';
 import { Reserve } from 'src/app/Models/reserve';
 import { ReserveEdit } from 'src/app/Models/reserveEdit';
 import { Router } from '@angular/router';
+import { UserService } from '../../Services/user.service';
 
 @Component({
   selector: 'app-editreserve',
@@ -11,11 +12,11 @@ import { Router } from '@angular/router';
 })
 export class EditreserveComponent implements OnInit {
 
-  reserve:any;
-  reserveEdit:ReserveEdit=new ReserveEdit;
-  
+  reserve: any;
+  reserveEdit: ReserveEdit = new ReserveEdit();
 
-  constructor(private reserveService: ReserveService,private router:Router) { }
+
+  constructor(private reserveService: ReserveService, private router: Router, private userService: UserService) { }
 
   ngOnInit() {
     this.Editar();
@@ -25,15 +26,15 @@ export class EditreserveComponent implements OnInit {
     let id=localStorage.getItem("idReserva");
     this.reserveService.getReserveById(+id)
     .subscribe(data=>{
-      this.reserveEdit.user=sessionStorage.getItem("token");
+      this.reserveEdit.user=this.userService.getCurrentUserId();
       this.reserve=data;
       this.reserveEdit.amountOfPeople=this.reserve.amountOfPeople;
       this.reserveEdit.functionId=this.reserve.functionId;
     })
   }
 
-  //todo
-  Actualizar(reserveEdit:ReserveEdit){
+
+  Actualizar(reserveEdit: ReserveEdit){
     this.reserveService.updateReserve(reserveEdit,localStorage.getItem("idReserva"))
     .subscribe(data => {
       this.reserveEdit=data;

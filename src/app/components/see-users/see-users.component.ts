@@ -16,6 +16,7 @@ export class SeeUsersComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUsers().subscribe( resp => {
+      console.log(resp)
       this.users=resp;
     })
   }

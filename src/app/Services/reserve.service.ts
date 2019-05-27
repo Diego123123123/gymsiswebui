@@ -28,8 +28,9 @@ export class ReserveService extends KestrellService {
   }
 
   // to do
-  updateReserve(reserve:ReserveEdit,reserveId){
-    return this.http.put<ReserveEdit>(this.url+ '/' +reserveId, reserve);
+  updateReserve(reserve, reserveId) {
+    console.log(reserveId);
+    return this.http.put(this.url + '/' + reserveId, reserve);
   }
 
   deleteReserve(id){

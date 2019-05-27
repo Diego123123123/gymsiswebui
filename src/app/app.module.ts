@@ -18,6 +18,10 @@ import { SeeUsersComponent } from './components/see-users/see-users.component';
 import { EditFunctionComponent } from './components/edit-function/edit-function.component';
 import { EditreserveComponent } from './components/editreserve/editreserve.component';
 import { AllreservesComponent } from './components/allreserves/allreserves.component';
+
+export function provideConfig() {
+  return config;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +42,10 @@ import { AllreservesComponent } from './components/allreserves/allreserves.compo
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -20,6 +20,10 @@ export class UserService extends KestrellService {
     return this.httpClient.post(this.url + '/login', user);
   }
 
+  getUsers() {
+    return this.httpClient.get(this.url);
+  }
+
 
   getToken() {
     return sessionStorage.getItem('token');
@@ -29,7 +33,4 @@ export class UserService extends KestrellService {
     return jwt_decode(sessionStorage.getItem('token'))["userid"];
   }
 
-  getUsers(){
-    return this.http.get(this.url);
-  }
 }

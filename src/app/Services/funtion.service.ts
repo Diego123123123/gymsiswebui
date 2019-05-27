@@ -27,4 +27,8 @@ export class FuntionService extends KestrellService{
   postFunction(myFunction){
     return this.http.post(this.url,myFunction);
   }
+
+  updateFunction(functionid, myFunction) {
+    return this.http.put(this.url + '/' + functionid, myFunction);
+  }
 }
