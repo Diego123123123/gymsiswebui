@@ -19,9 +19,6 @@ import { EditFunctionComponent } from './components/edit-function/edit-function.
 import { EditreserveComponent } from './components/editreserve/editreserve.component';
 import { AllreservesComponent } from './components/allreserves/allreserves.component';
 
-export function provideConfig() {
-  return config;
-}
 @NgModule({
   declarations: [
     AppComponent,
