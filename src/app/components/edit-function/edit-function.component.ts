@@ -30,7 +30,7 @@ export class EditFunctionComponent implements OnInit {
   Actualizar(reserveEdit: EditFunction){
     this.myFunctionService.updateFunction(localStorage.getItem("functionId"), reserveEdit)
     .subscribe(data => {
-      this.reserveEdit=data;
+      //this.reserveEdit=data;
       console.log(localStorage.getItem("functionId"));
       alert("Se actualizo con exito");
       this.router.navigate(["adminhome"])
