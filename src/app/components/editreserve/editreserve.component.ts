@@ -37,7 +37,7 @@ export class EditreserveComponent implements OnInit {
   Actualizar(reserveEdit: ReserveEdit){
     this.reserveService.updateReserve(reserveEdit,localStorage.getItem("idReserva"))
     .subscribe(data => {
-      this.reserveEdit=data;
+      //this.reserveEdit=data;
       console.log(localStorage.getItem("idReserva"));
       alert("Se actualizo con exito");
       this.router.navigate(["reserves"])
