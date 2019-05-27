@@ -4,3 +4,10 @@ export class MyFunction {
   schedule: string;
   room: number;
 }
+
+export class EditFunction{
+  movieName: String;
+  schedule: String;
+  room: number;
+  
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FuntionService } from 'src/app/Services/funtion.service';
+import { EditFunction } from 'src/app/Models/function';
 
 @Component({
   selector: 'app-edit-function',
@@ -12,6 +13,9 @@ export class EditFunctionComponent implements OnInit {
   constructor(private router:Router, private myFunctionService: FuntionService) { }
 
   myFunction:any;
+
+  editFunction:EditFunction= new EditFunction();
+
   ngOnInit() {
     this.Editar();
   }
@@ -21,6 +25,19 @@ export class EditFunctionComponent implements OnInit {
     this.myFunctionService.getFunctionById()
     .subscribe(data=>{
       this.myFunction=data;
+
+    })
+  }
+
+  Actualizar(myFunction){
+    this.editFunction.movieName=myFunction.movieName;
+    this.editFunction.schedule=myFunction.schedule;
+    this.editFunction.room=myFunction.room;
+    this.myFunctionService.updateFunction(this.editFunction)
+    .subscribe(data=>{
+      this.myFunction=data;
+      alert("Se actualizo con exito");
+      this.router.navigate(['adminhome'])
     })
   }
 

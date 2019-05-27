@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { KestrellService } from './kestrell.service';
 import { HttpClient } from '@angular/common/http';
-import {MyFunction} from '../Models/function';
+import {MyFunction, EditFunction} from '../Models/function';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,10 @@ export class FuntionService extends KestrellService{
 
   deleteFunction(){
       return this.http.delete((this.url)+ '/'+localStorage.getItem('functionId'));
+  }
+
+  updateFunction(editFunction:EditFunction){
+      return this.http.put<EditFunction>((this.url)+ '/'+localStorage.getItem('functionId'),editFunction);
   }
 
   postFunction(myFunction){
