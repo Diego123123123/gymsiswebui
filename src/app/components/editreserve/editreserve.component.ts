@@ -43,4 +43,8 @@ export class EditreserveComponent implements OnInit {
     })
   }
 
+  Cancel(){
+    this.router.navigate(["reserves"]);
+  }
+
 }

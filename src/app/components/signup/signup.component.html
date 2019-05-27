@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000b6">
   <a class="navbar-brand" href="#">Cinema</a>
   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
   </ul>
 
   <form class="form-inline my-2 my-lg-0">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="redirectLogIn()">Log In</button>
+    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="redirectLogIn()">Log In</button>
   </form>
 
 </nav>
@@ -19,26 +19,34 @@
             <h5 class="card-title text-center">Sign up</h5>
 
               <div class="form-label-group">
-                <input  [(ngModel)]="user.name" type="email" id="inputName" class="form-control" placeholder="Name" required autofocus>
                 <label for="inputName">Name</label>
+                <input  [(ngModel)]="user.name" type="email" id="inputName" class="form-control" placeholder="Name" required autofocus>
               </div>
 
               <div class="form-label-group">
-                <input [(ngModel)]="user.lastName" type="email" id="inputLastName" class="form-control" placeholder="Last Name" required autofocus>
                 <label for="inputLastName">Last Name</label>
+                <input [(ngModel)]="user.lastName" type="email" id="inputLastName" class="form-control" placeholder="Last Name" required autofocus>
               </div>
 
               <div class="form-label-group">
-                <input [(ngModel)]="user.email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                 <label for="inputEmail">Email address</label>
+                <input [(ngModel)]="user.email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <small id="emailHelpInline" class="text-muted">
+                    ejemplo@ejemplo.com
+                </small>
               </div>
 
               <div class="form-label-group">
-                <input [(ngModel)]="user.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <label for="inputPassword">Password</label>
-              </div>
+                <input [(ngModel)]="user.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <small id="passwordHelpInline" class="text-muted">
+                    Minimamente una letra mayuscula, una minuscula, 6 numeros y un caracter especial.
+                </small>
+              </div>  
+              <br><br>
+              
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="signUp()">Sign Up</button>
-              <hr class="my-4">
+              <br>
               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
           </div>
         </div>

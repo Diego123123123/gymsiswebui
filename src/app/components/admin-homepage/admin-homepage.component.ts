@@ -36,7 +36,7 @@ export class AdminHomepageComponent implements OnInit {
     localStorage.setItem("functionId",functionId.toString());
     this.myfunctionService.deleteFunction().subscribe(resp=>{
       alert("Funcion Eliminada");
-      this.router.navigate(['newfunction']);
+      location.reload();
     })
   }
 

@@ -1,6 +1,17 @@
 .card{
   width: 200%;
   margin-top: 10px;
+
+}
+.card-header{
+  margin: 0%;
+  background-color: #0e0e0e;
+  color: aliceblue;
+  
+}
+.card-body{
+  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .row{
   display: inline-block;

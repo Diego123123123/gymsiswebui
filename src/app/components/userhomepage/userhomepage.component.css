@@ -1,7 +1,19 @@
 .card{
   width: 200%;
   margin-top: 10px;
+  background-color: #00000000;
 }
+.card-header{
+  margin: 0%;
+  background-color: #000000ec;
+  color: aliceblue;
+}
+.card-body{
+  background-color: #fdfdfd;
+  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .row{
   display: inline-block;
 }

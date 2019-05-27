@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000b6">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,7 +23,11 @@
   </div>
 </nav>
 
-<h1>Funciones Actuales</h1>
+<br>
+  <div class="title" style="text-align: center; color:rgb(231, 231, 231)" >
+      <h1>Funciones Actuales</h1>
+  </div>
+  <br>
 <div class="container">
   <div class="row" *ngFor="let myFunction of myFunctions">
     <div class="col-sm-6">
@@ -35,8 +39,8 @@
               <p class="card-text">Horario: {{myFunction.schedule}}</p>
               <p class="card-text">Sala: {{myFunction.room}}</p>
               <p class="card-text">Pelicula disponible unicamente en idioma ingles, subtitulada al español</p>
-          <button (click)="editarFuncion(myFunction.functionId)" class="btn btn-lg btn-outline-primary">Editar Funcion</button>
-          <button (click)="eliminarFuncion(myFunction.functionId)" class="btn btn-lg btn-outline-primary" style="margin-left: 10px">Eliminar Funcion</button>
+          <button (click)="editarFuncion(myFunction.functionId)" class="btn btn-lg btn-outline-success">Editar Funcion</button>
+          <button (click)="eliminarFuncion(myFunction.functionId)" class="btn btn-lg btn-outline-danger" style="margin-left: 10px">Eliminar Funcion</button>
         </div>
       </div>
     </div>
