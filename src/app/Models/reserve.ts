@@ -4,3 +4,4 @@ export class Reserve {
   amountOfPeople: number;
   functionId: number;
 }
+

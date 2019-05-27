@@ -38,7 +38,7 @@ export class ReserveService extends KestrellService {
   }
 
   getAllReserves(){
-    return this.http.get(this.url);
+    return this.http.get((this.url)+'/userreserves');
   }
 
 }

@@ -11,10 +11,10 @@
         <li class="nav-item active">
           <a class="nav-link" [href]="'newfunction'">Crear Funcion <span class="sr-only">(current)</span></a>
         </li>
-  
+
       </ul>
       <form class="form-inline my-2 my-lg-0">
-  
+
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="logOut()">Log Out</button>
       </form>
     </div>
@@ -35,22 +35,21 @@
         <th scope="col">ID</th>
         <th scope="col">USUARIO</th>
         <th scope="col">CANTIDAD PERSONAS</th>
-        <th scope="col">ID FUNCION</th>
+        <th scope="col">PELICULA</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let reserve of reservas">
           <td>{{reserve.reserveId}}</td>
-          <td>{{reserve.user}}</td>
-          <td>{{reserve.amountOfPeople}}</td>
-          <td>{{reserve.functionId}}</td>
+          <td>{{reserve.email}}</td>
+          <td>{{reserve.amount}}</td>
+          <td>{{reserve.function}}</td>
         <td><button (click)="deleteReserve(reserve.reserveId)" type="button" class="btn btn-danger">Eliminar Reserva</button></td>
-        
+
       </tr>
     </tbody>
     </table>
     </div>
   </div>
 </div>
-  

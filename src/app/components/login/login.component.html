@@ -1,15 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000b6">
   <a class="navbar-brand" href="#">Cinema</a>
   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      
+
     </ul>
-  
+
     <form class="form-inline my-2 my-lg-0">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="redirectSignUp()">Sign Up</button>
     </form>
-  
+
 </nav>
-  
+
   <div class="container">
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -17,24 +17,22 @@
           <div class="card-body">
             <h5 class="card-title text-center">Sign In</h5>
             <form class="form-signin">
-              <!--<div class="form-label-group">-->
-                <!--<input id="emailinput" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>-->
-                <!--<label for="inputEmail">Email address</label>-->
-              <!--</div>-->
+
               <div class="form-group">
                 <input  [(ngModel)]="myuser.email" name="password" type="email" class="form-control">
+                <small id="emailHelpInline" class="text-muted">
+                    ejemplo@ejemplo.com
+                </small>
               </div>
-
-              <!--<div class="form-label-group">-->
-                <!--<input id="passwordinput" type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
-                <!--<label for="inputPassword">Password</label>-->
-              <!--</div>-->
 
               <div class="form-group">
                 <input  [(ngModel)]="myuser.password" name="password" type="password" class="form-control">
+                <small id="passwordHelpInline" class="text-muted">
+                    Minimamente una letra mayuscula, una minuscula, 6 numeros y un caracter especial.
+                </small>
               </div>
 
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="signin()" >Sign in</button>
+              <button class="btn btn-lg btn-success btn-block text-uppercase" type="submit" (click)="signin()" >Sign in</button>
               <hr class="my-4">
               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
             </form>

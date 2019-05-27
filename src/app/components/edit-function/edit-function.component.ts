@@ -23,7 +23,7 @@ export class EditFunctionComponent implements OnInit {
     let id = localStorage.getItem("functionId");
     this.myFunctionService.getFunctionById()
     .subscribe( data => {
-      this.myFunction = data;
+      /*this.myFunction = data;*/
     })
   }
 
