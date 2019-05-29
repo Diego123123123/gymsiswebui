@@ -1,0 +1,7 @@
+.card{
+  width: 200%;
+  margin-top: 10px;
+}
+.row{
+  display: inline-block;
+}
