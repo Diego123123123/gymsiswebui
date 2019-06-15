@@ -27,4 +27,10 @@ export class YtComponent implements OnInit {
 
   }
 
+  isCollapse = false;   // guardamos el valor
+    toggleState() { // manejador del evento
+        let foo = this.isCollapse;
+        this.isCollapse = foo === false ? true : false; 
+    }
+
 }
