@@ -16,13 +16,15 @@
 </nav>
  
 
-<div class="row">
-  <div class="card" style="width: 18rem;" *ngFor="let item of videos">
-    <iframe class="card-img-top" width="320" height="180" [src]="item.id.videoId | url: 'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <div class="container co md-6">
+  <div class="card" *ngFor="let item of videos">
+    <iframe class="card-img-top" width="320" height="250" [src]="item.id.videoId | url: 'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="card-body">
       <h5 class="card-title">{{item.snippet.title}}</h5>
       <p class="card-text">{{item.snippet.description}}</p>
       
     </div>
   </div>
-</div>
+  </div>
+

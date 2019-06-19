@@ -17,16 +17,13 @@ export class LoginComponent implements OnInit {
   }
 
   signin() {
-    console.log('-------------------------');
-    console.log(this.myuser);
-
     this.userService.signin({
       'email': this.myuser.email,
       'password': this.myuser.password
     }).subscribe((resp) => {
       console.log(resp)
-      sessionStorage.setItem('token', resp['token']);
-      if (this.userService.getCurrentUserId() === 'ea9a9ecc-dd20-48f8-887b-23b9c44df472') {
+      sessionStorage.setItem('token', resp['userId']);
+      if (this.userService.getCurrentUserId() === '9506867c-2079-4de3-b6b4-61be68ad738f') {
         this.router.navigate(["adminhome"]);
       }else{
         this.router.navigate(["userhome"]);

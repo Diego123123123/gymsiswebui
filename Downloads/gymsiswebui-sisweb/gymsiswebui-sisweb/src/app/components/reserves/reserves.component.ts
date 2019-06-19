@@ -3,6 +3,7 @@ import {ReserveService} from "../../Services/reserve.service";
 import {UserService} from "../../Services/user.service";
 import { Reserve } from 'src/app/Models/reserve';
 import { Router } from '@angular/router';
+import {FuntionService} from '../../Services/funtion.service';
 
 @Component({
   selector: 'app-reserves',
@@ -12,17 +13,22 @@ import { Router } from '@angular/router';
 export class ReservesComponent implements OnInit {
   userReserves: any;
 
-  constructor(private reserveService: ReserveService, private userService: UserService, private router:Router) { }
+  constructor(private reserveService: ReserveService, private userService: UserService, private router: Router, private myfunctionService: FuntionService) { }
 
   ngOnInit() {
     this.reserveService.getReservesByUserId(this.userService.getCurrentUserId()).subscribe((resp) => {
       this.userReserves = resp;
+      this.myfunctionService.getFunctionReserves(resp).subscribe((msg => {
+        this.userReserves = msg;
+      }));
     });
   }
 
   deleteReserve(reserveId):void{
     this.reserveService.deleteReserve(reserveId).subscribe(resp =>{
       alert("Reserva Eliminada");
+      this.router.navigate(['userhome']);
+    },(error) => {
       this.router.navigate(['userhome']);
     })
   }

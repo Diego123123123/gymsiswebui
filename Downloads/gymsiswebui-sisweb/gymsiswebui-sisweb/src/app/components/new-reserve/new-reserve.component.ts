@@ -22,12 +22,14 @@ export class NewReserveComponent implements OnInit {
     });
   }
 
-  Reservar(){
+  Reservar() {
     this.reserveService.addReserve({
       user: this.userService.getCurrentUserId(),
       amountOfPeople: this.amountOfPeople,
       functionId: localStorage.getItem('functionId')
     }).subscribe((resp) => {
+      this.router.navigate(['userhome']);
+    }, (error) => {
       this.router.navigate(['userhome']);
     });
   }

@@ -6,29 +6,33 @@ import {MyFunction} from '../Models/function';
 @Injectable({
   providedIn: 'root'
 })
-export class FuntionService extends KestrellService{
+export class FuntionService extends KestrellService {
 
   constructor(public http: HttpClient) {
-    super('functions', http);
+    super('functions', http, 'http://127.0.0.1:5000/');
   }
 
   getFunctions() {
+    console.log(this.getCurrentUrl())
     return this.http.get<MyFunction[]>(this.url);
   }
 
-  getFunctionById(){
+  getFunctionById() {
     return this.http.get((this.url) + '/' + localStorage.getItem('functionId'));
   }
 
-  deleteFunction(){
-      return this.http.delete((this.url)+ '/'+localStorage.getItem('functionId'));
+  deleteFunction() {
+      return this.http.delete((this.url) + '/' + localStorage.getItem('functionId'));
   }
 
-  postFunction(myFunction){
+  postFunction(myFunction) {
     return this.http.post(this.url,myFunction);
   }
 
   updateFunction(functionid, myFunction) {
     return this.http.put(this.url + '/' + functionid, myFunction);
+  }
+  getFunctionReserves(reserves) {
+    return this.http.post(this.url + '/functionreserves', reserves);
   }
 }

@@ -43,8 +43,8 @@
       <tr *ngFor="let reserve of reservas">
           <td>{{reserve.reserveId}}</td>
           <td>{{reserve.email}}</td>
-          <td>{{reserve.amount}}</td>
-          <td>{{reserve.function}}</td>
+          <td>{{reserve.amountOfPeople}}</td>
+          <td>{{reserve.function.movieName}}</td>
         <td><button (click)="deleteReserve(reserve.reserveId)" type="button" class="btn btn-danger">Eliminar Reserva</button></td>
 
       </tr>

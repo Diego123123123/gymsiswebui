@@ -24,7 +24,8 @@ export class SignupComponent implements OnInit {
       "name": this.user.name,
       "password": this.user.password
     }).subscribe((resp) => {
-      sessionStorage.setItem('token', resp['token']);
+      console.log(resp)
+      sessionStorage.setItem('token', resp['userId']);
       this.router.navigate(["userhome"]);
     });
   }

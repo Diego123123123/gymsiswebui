@@ -30,7 +30,10 @@ export class UserService extends KestrellService {
   }
 
   getCurrentUserId() {
-    return jwt_decode(sessionStorage.getItem('token'))["userid"];
+    return sessionStorage.getItem('token');
   }
 
+  parsereserves(reserves) {
+    return this.httpClient.post(this.url + '/userreserves', reserves);
+  }
 }

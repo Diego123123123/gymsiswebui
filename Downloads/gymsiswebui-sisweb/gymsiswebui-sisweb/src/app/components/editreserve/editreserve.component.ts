@@ -13,7 +13,7 @@ import { UserService } from '../../Services/user.service';
 export class EditreserveComponent implements OnInit {
 
   reserve: any;
-  reserveEdit: ReserveEdit = new ReserveEdit();
+  reserveEdit: any;
 
 
   constructor(private reserveService: ReserveService, private router: Router, private userService: UserService) { }
@@ -22,26 +22,25 @@ export class EditreserveComponent implements OnInit {
     this.Editar();
   }
 
-  Editar(){
-    let id=localStorage.getItem("idReserva");
-    this.reserveService.getReserveById(+id)
-    .subscribe(data=>{
-      this.reserveEdit.user=this.userService.getCurrentUserId();
-      this.reserve=data;
-      this.reserveEdit.amountOfPeople=this.reserve.amountOfPeople;
-      this.reserveEdit.functionId=this.reserve.functionId;
+  Editar() {
+    let id = localStorage.getItem("idReserva");
+    this.reserveService.getReserveById(id)
+    .subscribe(data => {
+      this.reserveEdit = data;
+      this.reserveEdit.user = this.userService.getCurrentUserId();
+      this.reserveEdit.amountOfPeople = this.reserve.amountOfPeople;
+      this.reserveEdit.functionId = this.reserve.functionId;
     })
   }
 
 
-  Actualizar(reserveEdit: ReserveEdit){
-    this.reserveService.updateReserve(reserveEdit,localStorage.getItem("idReserva"))
+  Actualizar(reserveEdit) {
+    this.reserveService.updateReserve(reserveEdit, localStorage.getItem('idReserva'))
     .subscribe(data => {
-      //this.reserveEdit=data;
-      console.log(localStorage.getItem("idReserva"));
-      alert("Se actualizo con exito");
-      this.router.navigate(["reserves"])
-    })
+      this.reserveEdit = data;
+      alert('Se actualizo con exito');
+      this.router.navigate(['reserves']);
+    });
   }
 
   isCollapse = false;   // guardamos el valor

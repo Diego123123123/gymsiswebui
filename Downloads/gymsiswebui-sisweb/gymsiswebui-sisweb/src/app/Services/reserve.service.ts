@@ -11,20 +11,18 @@ import { ReserveEdit } from '../Models/reserveEdit';
 export class ReserveService extends KestrellService {
 
   constructor(public http: HttpClient) {
-    super('reserves', http);
+    super('reserves', http, 'http://localhost:8090/');
   }
   addReserve(reserve) {
     return this.http.post(this.url, reserve);
   }
 
   getReservesByUserId(userid) {
-    console.log('------------------------');
-    console.log(this.url + '/users/' + sessionStorage.getItem('token'))
     return this.http.get(this.url + '/users/' + userid);
   }
 
   getReserveById(reserveId){
-    return this.http.get(this.url+ '/' + reserveId);
+    return this.http.get(this.url + '/' + reserveId);
   }
 
   // to do
@@ -37,8 +35,12 @@ export class ReserveService extends KestrellService {
     return this.http.delete(this.url + '/' + id);
   }
 
+  getReserves(){
+    return this.http.get(this.url);
+  }
+
   getAllReserves(){
-    return this.http.get((this.url)+'/userreserves');
+    return this.http.get((this.url) + '/userreserves');
   }
 
 }
