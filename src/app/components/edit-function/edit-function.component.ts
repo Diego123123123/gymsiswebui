@@ -23,14 +23,14 @@ export class EditFunctionComponent implements OnInit {
     let id = localStorage.getItem("functionId");
     this.myFunctionService.getFunctionById()
     .subscribe( data => {
-      this.myFunction = data;
+      //this.myFunction = data;
     })
   }
 
   Actualizar(reserveEdit: EditFunction){
     this.myFunctionService.updateFunction(localStorage.getItem("functionId"), reserveEdit)
     .subscribe(data => {
-      this.reserveEdit=data;
+     // this.reserveEdit=data;
       console.log(localStorage.getItem("functionId"));
       alert("Se actualizo con exito");
       this.router.navigate(["adminhome"])

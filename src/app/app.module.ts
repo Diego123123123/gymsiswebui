@@ -20,7 +20,7 @@ import { EditreserveComponent } from './components/editreserve/editreserve.compo
 import { AllreservesComponent } from './components/allreserves/allreserves.component';
 
 export function provideConfig() {
-  return config;
+  //return config;
 }
 @NgModule({
   declarations: [
