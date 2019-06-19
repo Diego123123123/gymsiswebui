@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -11,5 +13,4 @@ export class AppComponent {
 
   constructor(private router: Router) { }
 
-  
 }

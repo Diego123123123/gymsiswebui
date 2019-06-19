@@ -22,6 +22,11 @@ import { HereMapComponent } from './here-map/here-map.component';
 import { YtComponent } from './components/yt/yt.component';
 import { UrlPipe } from './pipes/url.pipe';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from '../environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +47,8 @@ import { UrlPipe } from './pipes/url.pipe';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
