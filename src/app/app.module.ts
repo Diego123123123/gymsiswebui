@@ -16,6 +16,7 @@ import { AdminHomepageComponent } from './components/admin-homepage/admin-homepa
 import { CreateFunctionComponent } from './components/create-function/create-function.component';
 import { SeeUsersComponent } from './components/see-users/see-users.component';
 import { EditFunctionComponent } from './components/edit-function/edit-function.component';
+import { AllreservesComponent } from './allreserves/allreserves.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { EditFunctionComponent } from './components/edit-function/edit-function.
     CreateFunctionComponent,
     SeeUsersComponent,
     EditFunctionComponent,
+    AllreservesComponent,
   ],
   imports: [
     BrowserModule,
